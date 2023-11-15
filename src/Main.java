@@ -26,11 +26,10 @@ public class Main {
         frame.setSize(600, 400);
         frame.setLayout(new BorderLayout());
 
-        // Crear panel superior para ingresar productos y clientes
         JPanel inputPanel = createInputPanel();
         frame.add(inputPanel, BorderLayout.NORTH);
 
-        // Crear tabla para mostrar la información ingresada
+  
         tableModel = new DefaultTableModel();
         tableModel.addColumn("ID");
         tableModel.addColumn("Producto");
@@ -43,7 +42,7 @@ public class Main {
         JScrollPane scrollPane = new JScrollPane(table);
         frame.add(scrollPane, BorderLayout.CENTER);
 
-        // Crear botón para guardar la información
+   
         JButton saveButton = new JButton("Guardar");
         saveButton.addActionListener(new ActionListener() {
             @Override
@@ -60,7 +59,7 @@ public class Main {
     private JPanel createInputPanel() {
         JPanel panel = new JPanel(new GridLayout(2, 4));
 
-        // Componentes para ingresar productos
+   
         JTextField productoTextField = new JTextField();
         JTextField precioTextField = new JTextField();
         JButton agregarProductoButton = new JButton("Agregar Producto");
@@ -72,7 +71,7 @@ public class Main {
             }
         });
 
-        // Componentes para ingresar clientes
+  
         JTextField nombreClienteTextField = new JTextField();
         JTextField telefonoClienteTextField = new JTextField();
         JButton agregarClienteButton = new JButton("Agregar Cliente");
@@ -84,7 +83,7 @@ public class Main {
             }
         });
 
-        // Agregar componentes al panel
+
         panel.add(new JLabel("Producto:"));
         panel.add(productoTextField);
         panel.add(new JLabel("Precio:"));
@@ -113,8 +112,7 @@ public class Main {
     }
 
     private void guardarInformacion() {
-        // Aquí puedes obtener la información de la interfaz y guardarla en la lista o en tu base de datos
-        // Por ahora, simplemente mostramos la información en la tabla
+
         Pedido pedido = new Pedido(1, productos, 2, new Date(), new Date(), clientes.get(0));
 
         tableModel.addRow(new Object[]{
